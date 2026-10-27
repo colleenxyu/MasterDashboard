@@ -18,8 +18,15 @@ def show_login_page():
         submit_button = st.form_submit_button("Log In")
         
         if submit_button:
-            # Simple check (For production, use st.secrets as shown below)
-            if username == "admin" and password == "your_secure_password":
+            # Strip accidental leading/trailing whitespace
+            clean_user = username.strip()
+            clean_pass = password.strip()
+            
+            # Replace with your actual credentials or st.secrets
+            expected_user = "admin"
+            expected_pass = "your_secure_password"  # Make sure this matches what you're typing!
+            
+            if clean_user == expected_user and clean_pass == expected_pass:
                 st.session_state["authenticated"] = True
                 st.rerun()
             else:
