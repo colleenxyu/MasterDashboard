@@ -5,7 +5,7 @@ st.set_page_config(page_title="Encrypted Entry Code Page", page_icon =":material
 #TitleDetails
 st.title("Encrypted Entry Code Page")
 st.write("Enter the correct safe word of the day in order to gain access to the dashboard credentials.")
-st.write("**Please message the developer for the word assigned during the time of access.**")
+st.write("Safe Word Hint: N-ice Camera Model + BIRTHDATE + Less One")
 
 
 
@@ -14,6 +14,13 @@ st.sidebar.image("MHLogo_White.png.png")
 st.sidebar.title("Page Navigation")
 st.sidebar.page_link("MasterDashboard.py",label="Master Dashboard")
 st.sidebar.page_link("pages/EntryCodes.py",label="Encrypted Entry Code Page")
+
+st.sidebar.markdown("---")
+if st.sidebar.button("Logout"):
+    st.session_state["authenticated"] = False
+    st.rerun()
+
+
 
 # A nice section for the protected download
 st.markdown("---")
