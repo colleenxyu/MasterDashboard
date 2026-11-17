@@ -86,7 +86,16 @@ with col2:
         st.write("This button leads you to the home dashboard page, which contains updates regarding home grocery, meat and vegetable purchases. ")
         st.page_link("https://home-dashboard.streamlit.app/",label ="Home Dashboard",icon =":material/home:",use_container_width=True, width="stretch")
 
-with st.container(border=True):
-    st.subheader("Utility Dashboard")
-    st.write("This button leads you to the utility monitoring dashboard, which contains updates regarding the cost and utilization of the following utilities: water, electricity, and solar energy.")
-    st.page_link("https://utilitydashboard2026.streamlit.app/", label="Utility Dashboard", icon=":material/electric_bolt:",use_container_width=True, width="stretch")
+col1,col2 =st.columns(2)
+with col1:
+    with st.container(border=True):
+        st.subheader("Utility Dashboard")
+        st.write("This button leads you to the utility monitoring dashboard, which contains updates regarding the cost and utilization of the following utilities: water, electricity, and solar energy.")
+        st.page_link("https://utilitydashboard2026.streamlit.app/", label="Utility Dashboard", icon=":material/electric_bolt:",use_container_width=True, width="stretch")
+
+with col2:
+    with st.container(border=True):
+        st.subheader("Gasoline Dashboard")
+        st.write("This button leads you to the gasoline dashboard, which contains a selected sample of vehicle gasoline consumption data and analysis.")
+        st.page_link("https://mhgasolinedashboard.streamlit.app/", label="Gasoline Dashboard",icon=":material/local_gas_station:", use_container_width=True, width="stretch")
+        
